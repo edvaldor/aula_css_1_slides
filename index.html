@@ -10,9 +10,9 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
+      overflow: hidden;
     }
     .slide {
       display: none;
@@ -67,9 +67,42 @@
       font-size: 0.8em;
       margin-left: 5px;
     }
+    #toc {
+      position: fixed;
+      top: 50px;
+      left: 10px;
+      background: #ffffffcc;
+      padding: 10px;
+      font-size: 0.6em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #toc a {
+      display: block;
+      color: #b00000;
+      margin-bottom: 4px;
+      text-decoration: none;
+    }
+    #toc a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+  <div id="toc">
+    <a href="#" onclick="goToSlide(0)">Capa</a>
+    <a href="#" onclick="goToSlide(1)">Relembrando</a>
+    <a href="#" onclick="goToSlide(2)">O que vamos ver</a>
+    <a href="#" onclick="goToSlide(3)">Hoje na História</a>
+    <a href="#" onclick="goToSlide(4)">Pai da Web</a>
+    <a href="#" onclick="goToSlide(5)">História do CSS</a>
+    <a href="#" onclick="goToSlide(6)">Prática 1</a>
+    <a href="#" onclick="goToSlide(7)">Prática Flexbox</a>
+    <a href="#" onclick="goToSlide(8)">Conclusão</a>
+    <a href="#" onclick="goToSlide(9)">HTML base</a>
+    <a href="#" onclick="goToSlide(10)">Exemplo botão estilizado</a>
+  </div>
+
   <div class="slide active">
     <img src="unipar.png" alt="Logo UNIPAR" class="logo" />
     <h1>CSS e Layouts para Web</h1>
@@ -80,8 +113,8 @@
   <div class="slide">
     <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>Relembrando</h2>
-    <p>Vimos os <strong>Elementos de CSS</strong>: estilos inline, internos e externos com exemplos práticos.(Prof Jhounas)</p>
-    <p>Hoje: organização de <strong>layouts</strong> e estilização semântica. Vamos fazer juntos e aplicar!</p>
+    <p>Vimos os <strong>Elementos de CSS</strong>: estilos inline, internos e externos com exemplos práticos. (Prof. Jhounas)</p>
+    <p>Hoje: organização de <strong>layouts</strong> e estilização semântica.</p>
   </div>
 
   <div class="slide">
@@ -99,22 +132,22 @@
   <div class="slide">
     <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>Hoje na História da Informática</h2>
-    <p><strong>30/04/1993:</strong> CERN libera o código do World Wide Web.</p>
-    <p>O CERN é uma organização de pesquisa nuclear na Suíça. Foi onde <strong>Tim Berners-Lee</strong> criou a Web como conhecemos.</p>
+    <p><strong>30/04/1993:</strong> CERN libera o código do WWW.</p>
+    <p>O <strong>CERN</strong>, localizado na Suíça, é o maior laboratório de física de partículas do mundo.</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/CERN-Microcosm.jpg/800px-CERN-Microcosm.jpg" alt="Foto do CERN">
   </div>
 
   <div class="slide">
     <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>O Pai da Web</h2>
-    <p>Tim Berners-Lee idealizou e desenvolveu o sistema de hipertexto que deu origem à Web.</p>
+    <p>Tim Berners-Lee desenvolveu a Web no CERN usando HTML, URI e HTTP.</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Tim_Berners-Lee_April_2009.jpg/440px-Tim_Berners-Lee_April_2009.jpg" alt="Foto de Tim Berners-Lee" />
   </div>
 
   <div class="slide">
     <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>História do CSS</h2>
-    <p>Håkon Wium Lie propôs o CSS em 1994 para separar conteúdo e aparência.</p>
+    <p>Håkon Wium Lie propôs o CSS em 1994 para separar conteúdo e estilo.</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/H%C3%A5kon_Wium_Lie.jpg/440px-H%C3%A5kon_Wium_Lie.jpg" alt="Foto de Håkon Wium Lie" />
   </div>
 
@@ -122,29 +155,57 @@
     <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>Vamos praticar juntos?</h2>
     <pre>&lt;p style="color:blue; font-size:18px"&gt;Olá, CSS!&lt;/p&gt;</pre>
-    <p>Crie no seu editor de HTML esse exemplo, altere a cor e tamanho da fonte. Observe o efeito.</p>
+    <p>Modifique cor, fonte e alinhamento. Observe o impacto visual.</p>
   </div>
 
   <div class="slide">
     <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>Exemplo prático com Flexbox</h2>
-    <pre>
-.container {
+    <pre>.container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }</pre>
-    <p>Experimente criar uma <code>div.container</code> com três caixas internas. Altere o alinhamento com <code>justify-content</code>.</p>
+    <p>Adicione 3 <code>divs</code> e alinhe-as horizontalmente.</p>
   </div>
 
   <div class="slide">
     <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>Conclusão</h2>
-    <p>O CSS é essencial para criar páginas bonitas e funcionais. Organiza o conteúdo visual e melhora a experiência do usuário.</p>
-    <p>Use as habilidades aprendidas hoje para criar seus próprios layouts responsivos e acessíveis.</p>
+    <p>CSS torna a web mais visual, organizada e responsiva.</p>
+  </div>
+
+  <div class="slide">
+    <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
+    <h2>HTML base</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Exemplo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Olá Mundo&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </div>
+
+  <div class="slide">
+    <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
+    <h2>Exemplo botão estilizado</h2>
+    <pre>
+button {
+  background-color: #b00000;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+    </pre>
   </div>
 
   <div id="navigator">
-    <span id="counter">Slide 1 de 10</span>
+    <span id="counter">Slide 1</span>
     <button onclick="prevSlide()">◀</button>
     <button onclick="nextSlide()">▶</button>
   </div>
@@ -170,13 +231,17 @@
       showSlide(current);
     }
 
+    function goToSlide(index) {
+      current = index;
+      showSlide(current);
+    }
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight' || e.key === 'PageDown') {
-        nextSlide();
-      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-        prevSlide();
-      }
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') nextSlide();
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
     });
+
+    showSlide(current);
   </script>
 </body>
 </html>
