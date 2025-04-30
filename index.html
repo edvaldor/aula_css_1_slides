@@ -24,6 +24,7 @@
       height: 100vh;
       box-sizing: border-box;
       font-size: 2em;
+      position: relative;
     }
     .slide.active {
       display: flex;
@@ -49,101 +50,103 @@
       white-space: pre-wrap;
     }
     .logo {
-      width: 150px;
-      margin-bottom: 20px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 80px;
     }
     #navigator {
       position: fixed;
       bottom: 10px;
-      width: 100%;
-      text-align: center;
-      font-size: 1em;
+      right: 20px;
+      font-size: 0.8em;
       color: #444;
     }
     #navigator button {
-      padding: 10px 20px;
-      font-size: 1em;
-      margin: 0 10px;
+      padding: 4px 10px;
+      font-size: 0.8em;
+      margin-left: 5px;
     }
   </style>
 </head>
 <body>
   <div class="slide active">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Unipar_logo.svg/512px-Unipar_logo.svg.png" alt="Logo UNIPAR" class="logo" />
+    <img src="/unipar.png" alt="Logo UNIPAR" class="logo" />
     <h1>CSS e Layouts para Web</h1>
     <p>Curso de Análise e Desenvolvimento de Sistemas - UNIPAR</p>
+    <p><strong>Autor dos slides:</strong> Prof. Edvaldo Rodrigues</p>
   </div>
 
   <div class="slide">
+    <img src="/unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>Relembrando</h2>
-    <p>No último encontro, vocês viram os <strong>Elementos de CSS</strong>, aprendendo como definir estilos em linha, internos e externos, além de exemplos de aplicação direta no HTML.</p>
-    <p>Hoje vamos dar continuidade com foco na organização de <strong>layouts</strong> e <strong>estilização semântica</strong>.</p>
+    <p>Vimos os <strong>Elementos de CSS</strong>: estilos inline, internos e externos com exemplos práticos.</p>
+    <p>Hoje: organização de <strong>layouts</strong> e estilização semântica. Vamos fazer juntos e aplicar!</p>
   </div>
 
   <div class="slide">
+    <img src="/unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>O que vamos ver nesta aula</h2>
     <ul style="text-align: left; max-width: 800px; margin: auto;">
-      <li>História e importância do CSS</li>
-      <li>Regras e sintaxe básica</li>
-      <li>Ligação entre HTML e CSS</li>
-      <li>Layouts com Flexbox</li>
-      <li>Exemplos visuais e práticas recomendadas</li>
+      <li>Lembrar: História e importância do CSS</li>
+      <li>Compreender: Regras e sintaxe básica</li>
+      <li>Aplicar: HTML e CSS juntos</li>
+      <li>Analisar: Layouts com Flexbox</li>
+      <li>Criar: Estilizações práticas com exemplos guiados</li>
     </ul>
   </div>
 
   <div class="slide">
+    <img src="/unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>Hoje na História da Informática</h2>
-    <p>Em <strong>30 de abril de 1993</strong>, o CERN liberou oficialmente o código-fonte do <strong>World Wide Web</strong> (WWW) para uso público e gratuito.</p>
-    <p>A criação do WWW é creditada a <strong>Tim Berners-Lee</strong>, que idealizou um sistema de hipertexto acessível via internet.</p>
-    <p>Esse marco possibilitou o surgimento dos websites como conhecemos hoje, conectando o mundo por meio da informação digital.</p>
+    <p><strong>30/04/1993:</strong> CERN libera o código do World Wide Web.</p>
+    <p>O CERN é uma organização de pesquisa nuclear na Suíça. Foi onde <strong>Tim Berners-Lee</strong> criou a Web como conhecemos.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/CERN-Microcosm.jpg/800px-CERN-Microcosm.jpg" alt="Foto do CERN">
   </div>
 
   <div class="slide">
+    <img src="/unipar.png" class="logo" alt="Logo UNIPAR" />
+    <h2>O Pai da Web</h2>
+    <p>Tim Berners-Lee idealizou e desenvolveu o sistema de hipertexto que deu origem à Web.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Tim_Berners-Lee_April_2009.jpg/440px-Tim_Berners-Lee_April_2009.jpg" alt="Foto de Tim Berners-Lee" />
+  </div>
+
+  <div class="slide">
+    <img src="/unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>História do CSS</h2>
-    <p>Proposto por Håkon Wium Lie em 1994, o CSS trouxe a separação entre conteúdo e apresentação, tornando o HTML mais limpo e as páginas web mais fáceis de manter.</p>
-    <img src="https://tse3.mm.bing.net/th?id=OIP.nh4rUO6uSdBUQQMJnEUsmQHaE7&pid=Api" alt="Ilustração Desenvolvimento Web" />
+    <p>Håkon Wium Lie propôs o CSS em 1994 para separar conteúdo e aparência.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/H%C3%A5kon_Wium_Lie.jpg/440px-H%C3%A5kon_Wium_Lie.jpg" alt="Foto de Håkon Wium Lie" />
   </div>
 
   <div class="slide">
-    <h2>Regras CSS</h2>
-    <pre>p {
-  color: red;
-  text-align: justify;
-  font-size: 20px;
-}</pre>
-    <pre>h1 {
-  color: blue;
-  text-align: center;
-  font-size: 40px;
-}</pre>
-    <img src="https://tse2.mm.bing.net/th/id/OIP.pWEOtjilgB1oP7Je1515tQHaH4?pid=Api" alt="CSS no HTML" />
+    <img src="/unipar.png" class="logo" alt="Logo UNIPAR" />
+    <h2>Vamos praticar juntos?</h2>
+    <pre>&lt;p style="color:blue; font-size:18px"&gt;Olá, CSS!&lt;/p&gt;</pre>
+    <p>Crie no seu editor de HTML esse exemplo, altere a cor e tamanho da fonte. Observe o efeito.</p>
   </div>
 
   <div class="slide">
-    <h2>Ligação do CSS ao HTML</h2>
-    <pre>&lt;link rel="stylesheet" href="style.css" /&gt;</pre>
-    <p>O atributo <code>rel</code> define a relação como folha de estilo, e <code>href</code> aponta para o arquivo CSS.</p>
-  </div>
-
-  <div class="slide">
-    <h2>Layouts com Flexbox</h2>
-    <pre>.container {
+    <img src="/unipar.png" class="logo" alt="Logo UNIPAR" />
+    <h2>Exemplo prático com Flexbox</h2>
+    <pre>
+.container {
   display: flex;
   justify-content: space-between;
 }</pre>
-    <img src="https://tse4.mm.bing.net/th?id=OIP.saVYfF-yryIk4qT-O4iTWQHaE7&pid=Api" alt="Layout responsivo" />
+    <p>Experimente criar uma <code>div.container</code> com três caixas internas. Altere o alinhamento com <code>justify-content</code>.</p>
   </div>
 
   <div class="slide">
+    <img src="/unipar.png" class="logo" alt="Logo UNIPAR" />
     <h2>Conclusão</h2>
-    <p>O CSS é uma ferramenta essencial para construir experiências web modernas, limpas, acessíveis e responsivas.</p>
-    <img src="https://tse4.mm.bing.net/th?id=OIP.BkowgTzLDI-GExO-pvS4IQHaHa&pid=Api" alt="Desenvolvedor Web" />
+    <p>O CSS é essencial para criar páginas bonitas e funcionais. Organiza o conteúdo visual e melhora a experiência do usuário.</p>
+    <p>Use as habilidades aprendidas hoje para criar seus próprios layouts responsivos e acessíveis.</p>
   </div>
 
   <div id="navigator">
-    <button onclick="prevSlide()">◀ Anterior</button>
-    <span id="counter">Slide 1 de 9</span>
-    <button onclick="nextSlide()">Próximo ▶</button>
+    <span id="counter">Slide 1 de 10</span>
+    <button onclick="prevSlide()">◀</button>
+    <button onclick="nextSlide()">▶</button>
   </div>
 
   <script>
