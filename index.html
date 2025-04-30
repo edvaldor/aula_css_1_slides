@@ -23,12 +23,17 @@
       padding: 60px 30px;
       height: 100vh;
       box-sizing: border-box;
+      font-size: 2em;
     }
     .slide.active {
       display: flex;
     }
     h1, h2 {
       color: #b00000;
+      font-size: 2em;
+    }
+    p, li, pre, code {
+      font-size: 1em;
     }
     img {
       max-width: 80%;
@@ -44,21 +49,40 @@
       white-space: pre-wrap;
     }
     .logo {
-      width: 120px;
+      width: 150px;
       margin-bottom: 20px;
+    }
+    #navigator {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 1em;
+      color: #444;
+    }
+    #navigator button {
+      padding: 10px 20px;
+      font-size: 1em;
+      margin: 0 10px;
     }
   </style>
 </head>
 <body>
+  <div class="slide active">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Unipar_logo.svg/512px-Unipar_logo.svg.png" alt="Logo UNIPAR" class="logo" />
+    <h1>CSS e Layouts para Web</h1>
+    <p>Curso de Análise e Desenvolvimento de Sistemas - UNIPAR</p>
+  </div>
+
   <div class="slide">
     <h2>Relembrando</h2>
-    <p>No  último encontro, vocÊs viram os <strong>Elementos de CSS</strong>, aprendendo como definir estilos em linha, internos e externos, além de exemplos de aplicação direta no HTML.</p>
+    <p>No último encontro, vocês viram os <strong>Elementos de CSS</strong>, aprendendo como definir estilos em linha, internos e externos, além de exemplos de aplicação direta no HTML.</p>
     <p>Hoje vamos dar continuidade com foco na organização de <strong>layouts</strong> e <strong>estilização semântica</strong>.</p>
   </div>
 
   <div class="slide">
     <h2>O que vamos ver nesta aula</h2>
-    <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <ul style="text-align: left; max-width: 800px; margin: auto;">
       <li>História e importância do CSS</li>
       <li>Regras e sintaxe básica</li>
       <li>Ligação entre HTML e CSS</li>
@@ -72,12 +96,6 @@
     <p>Em <strong>30 de abril de 1993</strong>, o CERN liberou oficialmente o código-fonte do <strong>World Wide Web</strong> (WWW) para uso público e gratuito.</p>
     <p>A criação do WWW é creditada a <strong>Tim Berners-Lee</strong>, que idealizou um sistema de hipertexto acessível via internet.</p>
     <p>Esse marco possibilitou o surgimento dos websites como conhecemos hoje, conectando o mundo por meio da informação digital.</p>
-  </div>
-
-  
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Unipar_logo.svg/512px-Unipar_logo.svg.png" alt="Logo UNIPAR" class="logo" />
-    <h1>CSS e Layouts para Web</h1>
-    <p>Curso de Análise e Desenvolvimento de Sistemas - UNIPAR</p>
   </div>
 
   <div class="slide">
@@ -122,22 +140,38 @@
     <img src="https://tse4.mm.bing.net/th?id=OIP.BkowgTzLDI-GExO-pvS4IQHaHa&pid=Api" alt="Desenvolvedor Web" />
   </div>
 
+  <div id="navigator">
+    <button onclick="prevSlide()">◀ Anterior</button>
+    <span id="counter">Slide 1 de 9</span>
+    <button onclick="nextSlide()">Próximo ▶</button>
+  </div>
+
   <script>
     const slides = document.querySelectorAll('.slide');
+    const counter = document.getElementById('counter');
     let current = 0;
 
     function showSlide(index) {
       slides.forEach(slide => slide.classList.remove('active'));
       slides[index].classList.add('active');
+      counter.textContent = `Slide ${index + 1} de ${slides.length}`;
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
     }
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight' || e.key === 'PageDown') {
-        current = (current + 1) % slides.length;
-        showSlide(current);
+        nextSlide();
       } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-        current = (current - 1 + slides.length) % slides.length;
-        showSlide(current);
+        prevSlide();
       }
     });
   </script>
