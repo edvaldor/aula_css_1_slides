@@ -89,19 +89,7 @@
   </style>
 </head>
 <body>
-  <div id="toc">
-    <a href="#" onclick="goToSlide(0)">Capa</a>
-    <a href="#" onclick="goToSlide(1)">Relembrando</a>
-    <a href="#" onclick="goToSlide(2)">O que vamos ver</a>
-    <a href="#" onclick="goToSlide(3)">Hoje na História</a>
-    <a href="#" onclick="goToSlide(4)">Pai da Web</a>
-    <a href="#" onclick="goToSlide(5)">História do CSS</a>
-    <a href="#" onclick="goToSlide(6)">Prática 1</a>
-    <a href="#" onclick="goToSlide(7)">Prática Flexbox</a>
-    <a href="#" onclick="goToSlide(8)">Conclusão</a>
-    <a href="#" onclick="goToSlide(9)">HTML base</a>
-    <a href="#" onclick="goToSlide(10)">Exemplo botão estilizado</a>
-  </div>
+  
 
   <div class="slide active">
     <img src="unipar.png" alt="Logo UNIPAR" class="logo" />
@@ -110,12 +98,20 @@
     <p><strong>Prof. Edvaldo Rodrigues</strong></p>
   </div>
 
-  <div class="slide">
-    <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
-    <h2>Relembrando</h2>
-    <p>Vimos os <strong>Elementos de CSS</strong>: estilos inline, internos e externos com exemplos práticos. (Prof. Jhounas)</p>
-    <p>Hoje: organização de <strong>layouts</strong> e estilização semântica.</p>
-  </div>
+  
+<div class="slide">
+  <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
+  <h2>GitHub: Nossos Projetos</h2>
+  <p>A partir de agora, vamos utilizar o <strong>GitHub</strong> para armazenar nossos projetos, exercícios e exemplos de aula.</p>
+  <p>É importante criar sua conta e começar a usar repositórios!</p>
+</div>
+<div class="slide">
+  <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
+  <h2>⚠️ Aviso Importante</h2>
+  <p>Todas as aulas de <strong>Desenvolvimento Web</strong> neste bimestre terão <strong>trabalhos avaliativos</strong>.</p>
+  <p>Evite faltas para não perder atividades práticas com nota!</p>
+</div>
+
 
   <div class="slide">
     <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
@@ -144,19 +140,37 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Tim_Berners-Lee_April_2009.jpg/440px-Tim_Berners-Lee_April_2009.jpg" alt="Foto de Tim Berners-Lee" />
   </div>
 
-  <div class="slide">
-    <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
-    <h2>História do CSS</h2>
-    <p>Håkon Wium Lie propôs o CSS em 1994 para separar conteúdo e estilo.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/H%C3%A5kon_Wium_Lie.jpg/440px-H%C3%A5kon_Wium_Lie.jpg" alt="Foto de Håkon Wium Lie" />
-  </div>
+  
+<div class="slide">
+  <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
+  <h2>HTML base</h2>
+  <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Exemplo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Olá Mundo&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+</div>
+
 
-  <div class="slide">
-    <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
-    <h2>Vamos praticar juntos?</h2>
-    <pre>&lt;p style="color:blue; font-size:18px"&gt;Olá, CSS!&lt;/p&gt;</pre>
-    <p>Modifique cor, fonte e alinhamento. Observe o impacto visual.</p>
-  </div>
+  
+<div class="slide">
+  <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
+  <h2>CSS em Arquivo Externo</h2>
+  <p>Você pode separar o CSS do HTML criando um arquivo <code>.css</code> e vinculando ao HTML.</p>
+  <p><strong>Passos:</strong></p>
+  <ol style="font-size: 0.8em;">
+    <li>Crie um arquivo chamado <code>estilo.css</code></li>
+    <li>Adicione suas regras CSS nele</li>
+    <li>No HTML, use: <code>&lt;link rel="stylesheet" href="estilo.css" /&gt;</code> dentro da tag &lt;head&gt;</li>
+  </ol>
+</div>
+
 
   <div class="slide">
     <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
@@ -190,19 +204,22 @@
     </pre>
   </div>
 
-  <div class="slide">
-    <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
-    <h2>Exemplo botão estilizado</h2>
-    <pre>
-button {
-  background-color: #b00000;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-}
-    </pre>
-  </div>
+  
+<div class="slide">
+  <img src="unipar.png" class="logo" alt="Logo UNIPAR" />
+  <h2>Trabalho Prático</h2>
+  <p>Crie uma <strong>landing page</strong> simples sobre a história do WWW contendo:</p>
+  <ul style="font-size: 0.8em; max-width: 800px; text-align: left;">
+    <li>Texto sobre o CERN</li>
+    <li>Imagem do CERN</li>
+    <li>Bandeira da Suíça</li>
+    <li>Texto sobre Tim Berners-Lee</li>
+    <li>Imagem de Tim Berners-Lee</li>
+    <li>Uso de CSS estudado nesta aula (inline, interno ou externo)</li>
+  </ul>
+  <p>Trabalho simples, porém feito com dedicação e organização!</p>
+</div>
+
 
   <div id="navigator">
     <span id="counter">Slide 1</span>
